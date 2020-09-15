@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Radio Button</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+    <script>
+        function lihat(){
+            var awal = document.getElementsByName("kebutuhan_awal");
+            var kompleks = document.getElementsByName("kompleksitas")
+            var waktu = document.getElementsByName("waktu")
+            var jumlah = document.getElementsByName("jumlah")
+            var keterampilan = document.getElementsByName("keterampilan")
+            var klien = document.getElementsByName("klien")
+
+            var gawal = [];
+            // var gkompleks = [];
+            // var gwaktu = [];
+            // var gjumlah = [];
+            // var gketerampilan = [];
+            // var gklien = [];
+
+            if (awal[0].checked) {
+                gawal.push("belum")
+            }
+            else if (awal[1].checked){
+                gawal.push("sudah")
+            }
+
+            if (kompleks[0].checked) {
+                gawal.push("sederhana")
+            }
+            else if (kompleks[1].checked){
+                gawal.push("kompleks")
+            }
+            else if (kompleks[2].checked){
+                gawal.push("sangat kompleks")
+            }
+
+            if (waktu[0].checked) {
+                gawal.push("kurang 1 bulan")
+            }
+            else if (waktu[1].checked){
+                gawal.push("1-3bulan")
+            }
+            else if (waktu[2].checked){
+                gawal.push("1-4bulan")
+            }
+            else if (waktu[3].checked){
+                gawal.push("6-12bulan")
+            }
+
+            if (jumlah[0].checked) {
+                gawal.push("kurang 12 Orang")
+            }
+            else if (jumlah[1].checked){
+                gawal.push(">12 Orang")
+            }
+
+            if (keterampilan[0].checked) {
+                gawal.push("berpengalaman")
+            }
+            else if (keterampilan[1].checked){
+                gawal.push("campuran")
+            }
+            else if (keterampilan[2].checked){
+                gawal.push("tidak berpengalaman")
+            }
+
+            if (klien[0].checked) {
+                gawal.push("terlibat")
+            }
+            else if (klien[1].checked){
+                gawal.push("tidak terlibat")
+            }
+
+            // if (gawal = ["sudah"]){
+            //     if (gkompleks = ["sederhana"]){
+            //         if (gwaktu = ["1-3bulan"]){
+            //             if (gjumlah = ["kurang 12 orang"]){
+            //                 if (gketerampilan = ["campuran"]){
+            //                     if (gklilen = "terlibat"){
+            //                         document.write("Incremental")
+            //                     }
+            //                     else{
+            //                         break
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+
+
+            // if (gawal = ["belum"]){
+            //     if (gkompleks = ["sangat kompleks"]){
+            //         if (gwaktu = ["6-12 bulan"]){
+            //             if (gjumlah = [">12 orang"]){
+            //                 if (gketerampilan = ["campuran"]){
+            //                     if (gklilen = "terlibat"){
+            //                         document.write("Vshaped Model")
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+
+            // if (gawal = ["belum"]){
+            //     if (gkompleks = ["sangat kompleks"]){
+            //         if (gwaktu = ["6-12 bulan"]){
+            //             if (gjumlah = [">12 orang"]){
+            //                 if (gketerampilan = ["campuran"]){
+            //                     if (gklilen = "terlibat"){
+            //                         document.write("Coba2")
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+
+            // if (gawal = [sudah,sederhana,1-3bulan,kurang 12 bulan,campuran,terlibat]){
+            //     document.write("Incremental")
+            // }
+            // else if (gawal = [belum,sangat kompleks,6-12bulan,>12 orang,campuran,terlibat]){
+            //     document.write("Vshaped Model")
+            //     document.write("Coba 2")
+            // }
+
+            // document.write(gawal)
+            // document.write(gkompleks)
+            // document.write(gwaktu)
+            // document.write(gjumlah)
+            // document.write(gketerampilan)
+            // document.write(gklilen)
+
+            // if (awal[0].checked){
+            //     if (kompleks[0].checked){
+            //         alert("belum dan sederhana")
+            //     }
+            //     else if (kompleks[1].checked){
+            //         alert("belum dan kompleks")
+            //     }
+            // }
+            // else if (awal[1].checked){
+            //     alert("Jelas")
+            // }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <form action="">
+            <label for="">Kebutuhan Awal : </label> <br>
+            <input type="radio" name="kebutuhan_awal" id="belum_jelas" value="Belum Jelas">Belum Jelas
+            <input type="radio" name="kebutuhan_awal" id="dapat_jelas" value="Dapat Dijelaskan">Dapat Dijelaskan 
+            <br><br>
+            
+            <label for="">Kompleksitas : </label> <br>
+            <input type="radio" name="kompleksitas" id="sederhana" value="Sederhana">Sederhana
+            <input type="radio" name="kompleksitas" id="kompleks" value="Kompleks">Kompleks
+            <input type="radio" name="kompleksitas" id="sangat_kompleks" value="Sangat Kompleks">Sangat Kompleks <br><br>
+
+            <label for="">Waktu Delivery : </label> <br>
+            <input type="radio" name="waktu" id="k1bulan" value="k1bulan">kurang 1 bulan
+            <input type="radio" name="waktu" id="1-3bulan" value="1-3bulan">1-3bulan
+            <input type="radio" name="waktu" id="1-4bulan" value="1-4bulan">1-4bulan
+            <input type="radio" name="waktu" id="6-12bulan" value="6-12bulan">6-12bulan
+            <br><br>
+
+            <label for="">Jumlah Tim (SDM) :</label> <br>
+            <input type="radio" name="jumlah" id="k12Orang" value="k12Orang">kurang 12 Orang
+            <input type="radio" name="jumlah" id=">12 Orang" value=">12 Orang">>12 Orang
+            <br><br>
+
+            <label for="">Ketrampilan Tim :</label> <br>
+            <input type="radio" name="keterampilan" id="Berpengalaman" value="Berpengalaman">Berpengalaman
+            <input type="radio" name="keterampilan" id="Campuran" value="Campuran">Campuran
+            <input type="radio" name="keterampilan" id="tBerpengalaman" value="tBerpengalaman">Tidak Berpengalaman
+            <br><br>
+
+            <label for="">Klien Terlibat Langsung :</label> <br>
+            <input type="radio" name="klien" id="Terlibat" value="Terlibat">Terlibat
+            <input type="radio" name="klien" id="tTerlibat" value="tTerlibat">Tidak Terlibat
+            <br><br>
+            <button type="button" onclick="lihat()" >Cek Metodologi</button>
+        </form>
+        <br>
+        <p id="hasil" style="color:green; font-size:18px; font-weight:bold;"></p>
+    </div>
+</body>
+</html>

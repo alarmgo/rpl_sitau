@@ -3,13 +3,35 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
           <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+          <link href="resources/css/custom.css" rel="stylesheet" />
           <script src="resources/js/bootstrap.min.js"></script>
+          <script src="resources/js/jquery.js"></script>
          
           <title>
 
           </title>
     </head>
     <body> 
+
+      <!-- BUTTON DISABLE UNLESS TRUE -->
+      <script>
+        $(function () {
+        var button = $('#cekbtn').prop('disabled', true);
+        var radios = $('input[type="radio"]');
+        var arr    = $.map(radios, function(el) { 
+                          return el.name; 
+                    });
+
+        var groups = $.grep(arr, function(v, k){
+                        return $.inArray(v ,arr) === k;
+                    }).length;
+
+        radios.on('change', function () {
+            button.prop('disabled', radios.filter(':checked').length < groups);
+            });
+        });
+      </script>
+      
       <!-- TOP BAR -->
       <nav class="navbar navbar-dark bg-primary shadow sticky-top">
         <div class="container-fluid">
@@ -29,7 +51,14 @@
               <b>SiTau</b> merupakan aplikasi simulasi untuk cek metodologi agar sesuai dengan karakteristik proyek dalam pengembangan sistem.
             </p>
             <form action="#start" class="text-center">
-              <button class="mx-auto rounded border-0 btn-primary shadow px-4 py-1">Mulai Disini!</button>
+              <script>
+                $("#scroll").click(function() {
+                $('html,body').animate({
+                    scrollTop: $(".second").offset().top},
+                    'slow');
+                });
+              </script>
+              <button id="scroll" class="mx-auto rounded border-0 btn-primary shadow px-4 py-1">Mulai Disini!</button>
             </form>
             
           </div>
@@ -45,20 +74,23 @@
             </h3>
           </div> 
 
-          <form action="pages/output.html" class="m-3">
+          <form method="POST" action="pages/output.php" class="m-3">
 
               <!-- START PERTANYAAN -->
               <label for="pertanyaan1" class="w-100 font-weight-bold bg-light p-1 rounded shadow-sm">Apakah kebutuhan project anda sudah dapat dijelaskan?</label>
               <div class="form-group" id="pertanyaan1">
-               <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="a1" name="requirement">
+
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="a2" name="requirement" value="1">
+                <label class="custom-control-label" for="a2">Belum Jelas</label>
+              </div>
+              
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="a1" name="requirement" value="2">
                 <label class="custom-control-label" for="a1">Dapat Dijelaskan</label>
               </div>
     
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="a2" name="requirement">
-                <label class="custom-control-label" for="a2">Belum Jelas</label>
-              </div>
+
             </div>
             <!-- END PERTANYAAN -->
 
@@ -66,17 +98,17 @@
               <label for="pertanyaan2" class="w-100 font-weight-bold bg-light p-1 rounded shadow-sm">Seberapa kompleks project anda?</label>
               <div class="form-group" id="pertanyaan2">
                <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="b1" name="complexity">
+                <input type="radio" class="custom-control-input" id="b1" name="complexity" value="1">
                 <label class="custom-control-label" for="b1">Simpel</label>
               </div>
     
               <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="b2" name="complexity">
+                <input type="radio" class="custom-control-input" id="b2" name="complexity" value="2">
                 <label class="custom-control-label" for="b2">Kompleks</label>
               </div>
 
               <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="b3" name="complexity">
+                <input type="radio" class="custom-control-input" id="b3" name="complexity" value="3">
                 <label class="custom-control-label" for="b3">Sangat Kompleks</label>
               </div>
             </div>
@@ -86,22 +118,22 @@
               <label for="pertanyaan3" class="w-100 font-weight-bold bg-light p-1 rounded shadow-sm">Berapa lama waktu delivery project anda?</label>
               <div class="form-group" id="pertanyaan3">
                <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="c1" name="time">
+                <input type="radio" class="custom-control-input" id="c1" name="time" value="1">
                 <label class="custom-control-label" for="c1">< 1 Bulan</label>
               </div>
     
               <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="c2" name="time">
+                <input type="radio" class="custom-control-input" id="c2" name="time" value="2">
                 <label class="custom-control-label" for="c2">1-3 Bulan</label>
               </div>
 
               <div class="custom-control custom-radio">
-               <input type="radio" class="custom-control-input" id="c3" name="time">
+               <input type="radio" class="custom-control-input" id="c3" name="time" value="3">
                <label class="custom-control-label" for="c3">4-6 Bulan</label>
              </div>
    
              <div class="custom-control custom-radio">
-               <input type="radio" class="custom-control-input" id="c4" name="time">
+               <input type="radio" class="custom-control-input" id="c4" name="time" value="4">
                <label class="custom-control-label" for="c4">6-12 Bulan</label>
              </div>
            </div>
@@ -111,12 +143,12 @@
               <label for="pertanyaan4" class="w-100 font-weight-bold bg-light p-1 rounded shadow-sm">Berapa jumlah SDM yang akan mengerjakan project anda?</label>
               <div class="form-group" id="pertanyaan4">
                <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="d1" name="team">
+                <input type="radio" class="custom-control-input" id="d1" name="team" value="1">
                 <label class="custom-control-label" for="d1">< 12 Orang</label>
               </div>
     
               <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="d2" name="team">
+                <input type="radio" class="custom-control-input" id="d2" name="team" value="2">
                 <label class="custom-control-label" for="d2">> 12 Orang</label>
               </div>
             </div>
@@ -126,17 +158,17 @@
               <label for="pertanyaan5" class="w-100 font-weight-bold bg-light p-1 rounded shadow-sm">Bagaimana keterampilan yang dimiliki tim anda?</label>
               <div class="form-group" id="pertanyaan5">
                <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="e1" name="skill">
+                <input type="radio" class="custom-control-input" id="e1" name="skill" value="1">
                 <label class="custom-control-label" for="e1">Tidak Berpengalaman</label>
               </div>
     
               <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="e2" name="skill">
+                <input type="radio" class="custom-control-input" id="e2" name="skill" value="2">
                 <label class="custom-control-label" for="e2">Campuran</label>
               </div>
 
               <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="e3" name="skill">
+                <input type="radio" class="custom-control-input" id="e3" name="skill" value="3">
                 <label class="custom-control-label" for="e3">Berpengalaman</label>
               </div>
             </div>
@@ -145,21 +177,24 @@
               <!-- START PERTANYAAN -->
               <label for="pertanyaan6" class="w-100 font-weight-bold bg-light p-1 rounded shadow-sm">Apakah client terlibat langsung saat project dikerjakan?</label>
               <div class="form-group" id="pertanyaan6">
+
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="f2" name="client" value="1"> 
+                <label class="custom-control-label" for="f2">Tidak Terlibat</label>
+              </div>
+
                <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="f1" name="client">
+                <input type="radio" class="custom-control-input" id="f1" name="client" value="2">
                 <label class="custom-control-label" for="f1">Terlibat</label>
               </div>
     
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="f2" name="client">
-                <label class="custom-control-label" for="f2">Tidak Terlibat</label>
-              </div>
+
             </div>
             <!-- END PERTANYAAN -->
             <div class="text-right">
 
               <button type="reset" class="btn btn-outline-warning mb-2">Bersihkan</button>
-              <button type="submit" class="btn btn-primary mb-2">Cek Metodologi</button>
+              <button type="submit" id="cekbtn" name="cek" value="cek" class="btn btn-primary mb-2">Cek Metodologi</button>
 
             </div>
           </form>

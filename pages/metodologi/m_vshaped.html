@@ -1,0 +1,89 @@
+<html>
+    <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <link href="../../resources/css/bootstrap.min.css" rel="stylesheet" />
+          <script src="../../resources/js/bootstrap.min.js"></script>
+          <script src="../../resources/js/actions.js"></script>
+         
+          <title>
+
+          </title>
+    </head>
+    <body> 
+      <!-- TOP BAR -->
+      <nav class="navbar navbar-dark bg-primary shadow sticky-top">
+        <div class="container-fluid">
+            <a href="../../index.html" class="navbar-brand mx-auto">
+              <img src="../../resources/images/tech.png" style="width: 5em;"/>
+            </a>
+        </div>    
+      </nav>
+
+
+      <!-- CONTAINER UTAMA -->
+      <div class="container-fluid bg-white" style="height: 90vh;">
+        <div class="mx-auto w-75">
+          <div class="w-100 py-5">
+            <div class="text-left">
+                <button type="button" onclick="goback()" class="btn btn-primary">
+                    Kembali ke List Metodologi
+                </button>
+              </div>
+
+            <!-- Penjelasan dan Gambar -->
+            <p class="text-center">
+                <p class="h3 text-center">Metodologi V-Shaped</p>
+            <div class="row mt-5">
+                <div class="col">
+                    <p class="h4">Penjelasan</p>
+                    <p class="text-justify">V-Model merupakan salah satu model SDLC yang dikembangkan dari model Waterfall dan memiliki tahapan-tahapan yang hampir sama dengan Waterfall, hanya saja pada model ini tahapan pengujian dirinci untuk masing-masing tahapan (Eka, et al., 2013). Jika pada model waterfall proses dijalankan secara linear, maka dalam model v proses dilakukan bercabang. V-Model standar yang digunakan di negara-negara Eropa seperti standar untuk proyek pertahanan dan administrasi federal di Jerman.  V-Model ini digambarkan hubungan antara tahap pengembangan software dengan tahap pengujiannya.</p>
+                </div>
+                <div class="col text-center">
+                    <img src="../../resources/images/vshaped.png" alt="Responsive image" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Kelebihan dan Kekurangan -->
+            <div class="row mt-4">
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item active h5">Kelebihan</li>
+                        <li class="list-group-item">Mudah dipahami</li>
+                        <li class="list-group-item">Perencanaan dan pengujian fungsional dilakukan sebelum coding.</li>
+                        <li class="list-group-item">Menghemat banyak waktu dan lebih berhasil dibanding model Waterfall.</li>
+                        <li class="list-group-item">Mudah untuk proyek kecil dengan kebutuhan yang jelas.</li>
+                      </ul>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item active h5">Kekurangan</li>
+                        <li class="list-group-item">Kaku dan tidak fleksibel</li>
+                        <li class="list-group-item">Tidak cocok untuk proyek yang kompleks</li>
+                        <li class="list-group-item">Tidak memiliki prototipe</li>
+                        <li class="list-group-item">Jika terjadi perubahan ditengah pengembangan, banyak pula hal yang harus disesuaikan</li>
+                      </ul>
+                </div>
+            </div>
+
+            <!-- DOWNLOAD PDF FOR METHODOLOGY -->
+            <div class="w-100 container-fluid text-right">
+              <a href="../../resources/documentation/m_vsh.pdf">
+                <button type="button" class="btn btn-danger" >Source [PDF]</button>
+              </a>            
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      
+          
+   
+
+      <div id="start" class="container-fluid bg-primary">
+
+      </div>
+
+    </body>
+</html>
