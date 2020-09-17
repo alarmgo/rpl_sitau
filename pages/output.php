@@ -6,7 +6,7 @@
           <script src="../resources/js/bootstrap.min.js"></script>
          
           <title>
-
+            Hasil Metodologi
           </title>
     </head>
     <body> 
