@@ -29,6 +29,8 @@
 
           include 'parts/m_classes.php';
 
+          // mengambil scores berdasarkan jawaban di m_classes.php
+          // untuk menambahkan ppin kecocokan metode -- secara teoritis -- dengan jawaban yang diberikan
           foreach ($mtd as $m){
             if ($m->mc_reqs == $ans[0]){
               $m->mc_like += 1;
@@ -50,6 +52,7 @@
             }
           }
 
+          
           $cocok = array();
           foreach ($mtd as $m){
            if ($m->mc_like >= 3){
