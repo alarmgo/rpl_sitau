@@ -107,7 +107,8 @@
             // Ditampung dalam bentuk array pada variabel ans
             $ans = array($reqs,$comp,$time,$team,$skll,$clnt);
             
-            
+            // Variabel dari masing-masing class metodologi
+            // Ditampung dalam bentuk array pada variabel mtd
             $mtd = array($inc,$vsh,$spi,$rad,$pro,$scr,$xpr);
 
           ?>

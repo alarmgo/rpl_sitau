@@ -52,7 +52,6 @@
             }
           }
 
-          
           $cocok = array();
           foreach ($mtd as $m){
            if ($m->mc_like >= 3){
