@@ -34,31 +34,40 @@
           foreach ($mtd as $m){
             if ($m->mc_reqs == $ans[0]){
               $m->mc_like += 1;
+              $m->mc_perc += 16.7;
             }
             if ($m->mc_comp == $ans[1]){
               $m->mc_like += 1;
+              $m->mc_perc += 16.7;
             }
             if ($m->mc_time == $ans[2]){
               $m->mc_like += 1;
+              $m->mc_perc += 16.7;
             }
             if ($m->mc_team == $ans[3]){
               $m->mc_like += 1;
+              $m->mc_perc += 16.7;
             }
             if ($m->mc_skll == $ans[4]){
               $m->mc_like += 1;
+              $m->mc_perc += 16.7;
             }
             if ($m->mc_clnt == $ans[5]){
               $m->mc_like += 1;
+              $m->mc_perc += 16.7;
             }
+            
+            $m->mc_perc = round($m->mc_perc);
           }
-
+          
           $cocok = array();
           foreach ($mtd as $m){
            if ($m->mc_like >= 3){
               $cocok[] = $m;
-            }
+                          }
 
           }
+
 
 
           //echo ("<a href='".$inc->mc_link."'> Detail </a>");
@@ -68,8 +77,11 @@
 
           foreach ($cocok as $c){
             echo ("<tr>");
-            echo ("<th scope='row'>".$c->mc_name."</th>");
+            
+            echo ("<th>".$c->mc_perc."%</th>");
+            echo ("<td>".$c->mc_name."</th>");
             echo ("<td><a href='".$c->mc_link."'>Detail</a></td>");
+            
             echo ("</tr>");
           }
 

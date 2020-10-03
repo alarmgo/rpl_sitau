@@ -23,14 +23,15 @@
               public $mc_clnt;
               public $mc_link;
               public $mc_like = 0; // variabel yang menampung poin-poin kesamaan antara jawaban sama kecocokan metodologi
+              public $mc_perc; //dalam %
 
             }
 
             // metodologi incremental
             $inc = new methodology();
             $inc->mc_name = "Incremental";
-            $inc->mc_reqs = 1;
-            $inc->mc_comp = 1;
+            $inc->mc_reqs = 2;
+            $inc->mc_comp = 2;
             $inc->mc_time = 2;
             $inc->mc_team = 1;
             $inc->mc_skll = 2;
@@ -40,8 +41,8 @@
             // metodologi v-shaped
             $vsh = new methodology();
             $vsh->mc_name = "V - Shaped";
-            $vsh->mc_reqs = 1;
-            $vsh->mc_comp = 3;
+            $vsh->mc_reqs = 2;
+            $vsh->mc_comp = 1;
             $vsh->mc_time = 4;
             $vsh->mc_team = 2;
             $vsh->mc_skll = 2;
@@ -51,7 +52,7 @@
             // metodologi spiral
             $spi = new methodology();
             $spi->mc_name = "Spiral";
-            $spi->mc_reqs = 2;
+            $spi->mc_reqs = 1;
             $spi->mc_comp = 3;
             $spi->mc_time = 3;
             $spi->mc_team = 2;
@@ -59,11 +60,11 @@
             $spi->mc_clnt = 2;
             $spi->mc_link = "metodologi/m_spiral.html"; // link penghubung ke metodologi spiral
 
-            // metodologi rapid agile development
+            // metodologi rapid application development
             $rad = new methodology();
-            $rad->mc_name = "Rapid Agile Development";
+            $rad->mc_name = "Rapid Application Development";
             $rad->mc_reqs = 2;
-            $rad->mc_comp = 3;
+            $rad->mc_comp = 2;
             $rad->mc_time = 2;
             $rad->mc_team = 1;
             $rad->mc_skll = 2;
@@ -74,7 +75,7 @@
             $pro = new methodology();
             $pro->mc_name = "Prototyping";
             $pro->mc_reqs = 1;
-            $pro->mc_comp = 3;
+            $pro->mc_comp = 1;
             $pro->mc_time = 1;
             $pro->mc_team = 1;
             $pro->mc_skll = 3;
@@ -95,7 +96,7 @@
             // metodologi Extreme Programming
             $xpr = new methodology();
             $xpr->mc_name = "Extreme Programming";
-            $xpr->mc_reqs = 2;
+            $xpr->mc_reqs = 1;
             $xpr->mc_comp = 1;
             $xpr->mc_time = 1;
             $xpr->mc_team = 1;
@@ -112,3 +113,33 @@
             $mtd = array($inc,$vsh,$spi,$rad,$pro,$scr,$xpr);
 
           ?>
+
+<!-- 
+
+LEGEND PERTANYAAN
+
+Requirement :
+1 = Belum Jelas
+2 = Dapat Dijelaskan
+
+Complexity :
+1 = Simpel
+2 = Kompleks
+3 = Sangat Kompleks
+
+Time :
+1 = < 1 Bulan
+2 = 1-3 Bulan
+3 = 4-6 Bulan
+4 = 6-12 Bulan
+
+Team :
+1 = < 12 Orang
+2 = > 12 Orang
+
+Client :
+1 = Tidak Terlibat
+2 = Terlibat
+
+
+ -->
