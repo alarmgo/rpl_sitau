@@ -60,15 +60,27 @@
             $m->mc_perc = round($m->mc_perc);
           }
           
+          // array yang isinya metodologi yang cocok sesuai poin kecocokan ($m->mc_like)
+          // disimpennya di $cocok
           $cocok = array();
           foreach ($mtd as $m){
-           if ($m->mc_like >= 3){
-              $cocok[] = $m;
+            if ($m->mc_perc > 50 && $m->mc_like >= 3){
+                $cocok[] = $m;
                           }
-
           }
 
-
+          // algoritma sorting buat urutin rekomendasi metodologi sesuai presentase
+          // algoritma sortingnya bubble sort
+          for ($i = 0; $i < count($cocok) ; $i++) { 
+            for ($j = count($cocok)-1; $j > $i ; $j--) { 
+              if($cocok[$j] > $cocok[$j-1]){
+                $temp 	= $cocok[$j];
+                $cocok[$j] 	= $cocok[$j-1];
+                $cocok[$j-1] = $temp;
+                }
+            }
+          }
+          
 
           //echo ("<a href='".$inc->mc_link."'> Detail </a>");
 
@@ -84,6 +96,7 @@
             
             echo ("</tr>");
           }
+
 
           include 'parts/table_foot.html';
           ?>
